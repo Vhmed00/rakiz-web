@@ -24,7 +24,7 @@ export default function Navbar() {
         transition={{ duration: 0.4, ease: [0, 0, 0.2, 1] }}
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "border-b border-neutral-200 bg-white/90 backdrop-blur-xl shadow-sm"
+            ? "border-b border-white/10 bg-black/80 backdrop-blur-xl shadow-sm"
             : "bg-transparent"
         }`}
       >
@@ -32,7 +32,7 @@ export default function Navbar() {
 
           {/* Logo — text only, no icon */}
           <a href="/" className="flex items-center">
-            <span className="text-base font-bold tracking-tight text-neutral-950" style={{ letterSpacing: "-0.02em" }}>
+            <span className="text-base font-bold tracking-tight text-white" style={{ letterSpacing: "-0.02em" }}>
               {isAr ? "ركيز" : "Rakiz"}
             </span>
           </a>
@@ -43,7 +43,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="rounded-md px-3 py-1.5 text-sm text-neutral-500 transition-colors duration-150 hover:text-neutral-950"
+                className="rounded-md px-3 py-1.5 text-sm text-neutral-400 transition-colors duration-150 hover:text-white"
               >
                 {link.label}
               </a>
@@ -53,16 +53,16 @@ export default function Navbar() {
           {/* Desktop right */}
           <div className="hidden items-center gap-2 md:flex">
             {/* Language toggle */}
-            <div className="flex items-center overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50">
+            <div className="flex items-center overflow-hidden rounded-lg border border-white/10 bg-white/5">
               {(["en", "ar"] as const).map((l, i) => (
                 <button
                   key={l}
                   onClick={() => setLang(l)}
                   className={`flex items-center gap-1 px-2.5 py-1.5 text-xs font-medium transition-colors duration-150 ${
                     lang === l
-                      ? "bg-white text-neutral-900 shadow-sm"
-                      : "text-neutral-400 hover:text-neutral-700"
-                  } ${i === 0 ? "" : "border-s border-neutral-200"}`}
+                      ? "bg-white/10 text-white shadow-sm"
+                      : "text-neutral-400 hover:text-white"
+                  } ${i === 0 ? "" : "border-s border-white/10"}`}
                 >
                   {i === 0 && <Globe className="h-3 w-3" />}
                   {l.toUpperCase()}
@@ -72,7 +72,7 @@ export default function Navbar() {
 
             <a
               href="#contact"
-              className="rounded-lg bg-neutral-950 px-3.5 py-1.5 text-sm font-medium text-white transition-colors duration-150 hover:bg-neutral-800"
+              className="rounded-lg bg-white px-3.5 py-1.5 text-sm font-medium text-neutral-950 transition-colors duration-150 hover:bg-neutral-200"
             >
               {t.nav.cta}
             </a>
@@ -80,14 +80,14 @@ export default function Navbar() {
 
           {/* Mobile right */}
           <div className="flex items-center gap-2 md:hidden">
-            <div className="flex items-center overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50">
+            <div className="flex items-center overflow-hidden rounded-lg border border-white/10 bg-white/5">
               {(["en", "ar"] as const).map((l, i) => (
                 <button
                   key={l}
                   onClick={() => setLang(l)}
                   className={`px-2.5 py-1.5 text-xs font-medium transition-colors ${
-                    lang === l ? "bg-white text-neutral-900 shadow-sm" : "text-neutral-400"
-                  } ${i === 0 ? "" : "border-s border-neutral-200"}`}
+                    lang === l ? "bg-white/10 text-white shadow-sm" : "text-neutral-400"
+                  } ${i === 0 ? "" : "border-s border-white/10"}`}
                 >
                   {l.toUpperCase()}
                 </button>
@@ -95,7 +95,7 @@ export default function Navbar() {
             </div>
             <button
               onClick={() => setMenuOpen((v) => !v)}
-              className="flex h-8 w-8 items-center justify-center rounded-lg border border-neutral-200 bg-neutral-50 text-neutral-600 transition-colors hover:text-neutral-950"
+              className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-neutral-300 transition-colors hover:text-white"
               aria-label="Menu"
             >
               {menuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
@@ -112,7 +112,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -4 }}
             transition={{ duration: 0.2, ease: [0, 0, 0.2, 1] }}
-            className="fixed inset-x-0 top-14 z-40 border-b border-neutral-200 bg-white/95 backdrop-blur-xl px-4 pb-4 pt-2 md:hidden"
+            className="fixed inset-x-0 top-14 z-40 border-b border-white/10 bg-black/90 backdrop-blur-xl px-4 pb-4 pt-2 md:hidden"
           >
             <div className="flex flex-col gap-0.5">
               {t.nav.links.map((link) => (
@@ -120,16 +120,16 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-lg px-3 py-2.5 text-sm text-neutral-600 transition-colors hover:bg-neutral-50 hover:text-neutral-950"
+                  className="rounded-lg px-3 py-2.5 text-sm text-neutral-400 transition-colors hover:bg-white/5 hover:text-white"
                 >
                   {link.label}
                 </a>
               ))}
-              <div className="mt-3 border-t border-neutral-100 pt-3">
+              <div className="mt-3 border-t border-white/10 pt-3">
                 <a
                   href="#contact"
                   onClick={() => setMenuOpen(false)}
-                  className="flex w-full items-center justify-center rounded-lg bg-neutral-950 py-2.5 text-sm font-medium text-white"
+                  className="flex w-full items-center justify-center rounded-lg bg-white py-2.5 text-sm font-medium text-neutral-950"
                 >
                   {t.nav.cta}
                 </a>
