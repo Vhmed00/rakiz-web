@@ -55,7 +55,7 @@ export default function Solutions() {
           className="grid grid-cols-1 gap-4 md:grid-cols-3"
         >
           {t.solutions.packages.map((pkg, i) => {
-            const isFeatured    = i === 1;
+            const isFeatured     = i === 1;
             const isSubscription = i === 2;
             return (
               <motion.div
@@ -69,7 +69,7 @@ export default function Solutions() {
                     : "border-neutral-200 bg-white shadow-sm hover:shadow-md"
                 }`}
               >
-                {/* Badges */}
+                {/* Badge row */}
                 {isFeatured && (
                   <span className="mb-4 inline-flex w-fit items-center rounded-full border border-white/10 bg-white/10 px-2.5 py-0.5 text-[10px] font-medium text-white/80">
                     {t.solutions.mostPopular}
@@ -78,7 +78,7 @@ export default function Solutions() {
                 {isSubscription && (
                   <span className="mb-4 inline-flex w-fit items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-[10px] font-medium text-emerald-700">
                     <span className="h-1 w-1 rounded-full bg-emerald-500" />
-                    Best Value · Monthly
+                    {t.solutions.bestValue}
                   </span>
                 )}
 
@@ -93,7 +93,7 @@ export default function Solutions() {
                 </div>
 
                 {/* Price */}
-                <div className="mb-4 flex items-baseline gap-1.5">
+                <div className="mb-1 flex items-baseline gap-1.5">
                   <span
                     className={`font-mono text-2xl font-bold ${isFeatured ? "text-white" : "text-neutral-950"}`}
                     style={{ letterSpacing: "-0.03em" }}
@@ -104,13 +104,18 @@ export default function Solutions() {
                     {pkg.period}
                   </span>
                 </div>
+                {pkg.priceSuffix && (
+                  <p className={`mb-3 text-[11px] font-medium ${isFeatured ? "text-white/40" : "text-neutral-400"}`}>
+                    {pkg.priceSuffix}
+                  </p>
+                )}
 
-                <p className={`mb-5 text-xs leading-relaxed ${isFeatured ? "text-white/60" : "text-neutral-500"}`}>
+                <p className={`mb-5 text-xs leading-relaxed ${isFeatured ? "text-white/60" : "text-neutral-500"} ${pkg.priceSuffix ? "" : "mt-2"}`}>
                   {pkg.description}
                 </p>
 
                 {/* Features */}
-                <ul className="flex-1 space-y-2.5 mb-6">
+                <ul className="flex-1 space-y-2.5 mb-5">
                   {pkg.features.map((f) => (
                     <li key={f} className="flex items-start gap-2 text-xs">
                       <Check
@@ -123,6 +128,15 @@ export default function Solutions() {
                     </li>
                   ))}
                 </ul>
+
+                {/* Bundle note */}
+                {pkg.bundleNote && (
+                  <div className="mb-5 rounded-xl border border-neutral-200 bg-neutral-50 px-3.5 py-2.5">
+                    <p className="text-[11px] leading-relaxed text-neutral-500">
+                      {pkg.bundleNote}
+                    </p>
+                  </div>
+                )}
 
                 {/* CTA */}
                 <a

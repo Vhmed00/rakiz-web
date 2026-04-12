@@ -73,13 +73,16 @@ export interface Translations {
     highlight: string;
     subtext: string;
     mostPopular: string;
+    bestValue: string;
     packages: Array<{
       name: string;
       tagline: string;
       price: string;
       period: string;
+      priceSuffix?: string;
       description: string;
       features: string[];
+      bundleNote?: string;
       cta: string;
     }>;
     bottomNote: string;
@@ -242,62 +245,59 @@ const en: Translations = {
     highlight: "growth path",
     subtext:
       "Modular packages — combine, upgrade, or start focused. No hidden fees.",
-    mostPopular: "Most popular",
+    mostPopular: "Most Popular",
+    bestValue: "Best Value",
     packages: [
       {
         name: "Digital Foundation",
         tagline: "Get found. Get leads.",
         price: "OMR 99",
-        period: "one-time",
+        period: "one-time setup",
         description:
-          "Everything an SME needs to establish a credible, lead-generating presence online.",
+          "The essential launchpad for your business. Stand out with a premium digital presence.",
         features: [
-          "High-converting landing page",
-          "Local SEO setup & optimisation",
-          "WhatsApp Business integration",
-          "Google Business Profile",
-          "Basic analytics dashboard",
-          "1-month post-launch support",
+          "Custom Minimalist Landing Page",
+          "Local SEO & Google Maps setup",
+          "Direct WhatsApp Integration",
+          "1-Month Priority Support",
         ],
+        bundleNote: "Waived completely with a 6-month Growth Engine partnership.",
         cta: "Get started",
       },
       {
         name: "Operations & SaaS",
         tagline: "Automate. Optimise. Dominate.",
         price: "OMR 199",
-        period: "one-time",
+        period: "setup",
+        priceSuffix: "+ OMR 29 / month",
         description:
-          "Custom internal tools and automations that save hours every week.",
+          "Transform your operations. We build the system, you scale the business.",
         features: [
-          "Custom operations dashboard",
-          "Custom Workflow Automation & Dashboard",
-          "Inventory & CRM tracking",
-          "WhatsApp bot automation",
-          "Staff performance reports",
-          "3-month ongoing support",
+          "Bespoke Operations Dashboard",
+          "Automated Workflows & CRM",
+          "Smart WhatsApp Bot",
+          "Continuous System Support",
         ],
         cta: "Get started",
       },
       {
         name: "Growth Engine",
-        tagline: "Scale with data & content.",
+        tagline: "Your dedicated digital partner.",
         price: "OMR 59",
         period: "/ month",
         description:
-          "A monthly retainer that compounds your digital presence through SEO and AI content.",
+          "A complete digital partnership. We handle the growth, so you can handle the clients.",
         features: [
-          "Monthly retainer partnership",
-          "AI-assisted content creation",
-          "Advanced SEO campaigns",
-          "Competitor analysis reports",
-          "Conversion rate optimisation",
-          "Dedicated account manager",
+          "Advanced SEO Campaigns",
+          "AI-Assisted Content Creation",
+          "Continuous Conversion Optimisation",
+          "Full Website Maintenance",
         ],
         cta: "Get started",
       },
     ],
     bottomNote:
-      "All plans include a free 30-minute diagnostic call. No commitment required.",
+      "All packages include a free 30-minute diagnostic call. No commitment required.",
   },
 
   process: {
@@ -493,55 +493,52 @@ const ar: Translations = {
     highlight: "مسار نموك",
     subtext: "باقات متكاملة — ادمجها أو طوّرها أو ابدأ بتركيز. لا رسوم خفية.",
     mostPopular: "الأكثر طلباً",
+    bestValue: "الأفضل قيمةً",
     packages: [
       {
         name: "الأساس الرقمي",
         tagline: "احضر. واجذب العملاء.",
         price: "٩٩ ر.ع.",
-        period: "مرة واحدة",
+        period: "إعداد لمرة واحدة",
         description:
-          "كل ما تحتاجه شركتك لبناء حضور رقمي موثوق يولّد العملاء.",
+          "منصة الانطلاق الأساسية لعملك. تميّز بحضور رقمي احترافي.",
         features: [
-          "صفحة هبوط عالية التحويل",
-          "إعداد SEO المحلي وتحسينه",
-          "تكامل واتساب للأعمال",
-          "ملف أعمال جوجل",
-          "لوحة تحليلات أساسية",
-          "دعم شهر كامل بعد الإطلاق",
+          "صفحة هبوط مخصصة وأنيقة",
+          "SEO المحلي وإعداد خرائط جوجل",
+          "تكامل واتساب مباشر",
+          "دعم أولوية لمدة شهر",
         ],
+        bundleNote: "يُعفى منها كلياً عند الاشتراك بـ محرك النمو لـ 6 أشهر.",
         cta: "ابدأ الآن",
       },
       {
         name: "العمليات والأنظمة",
         tagline: "أتمت. حسِّن. تفوَّق.",
         price: "١٩٩ ر.ع.",
-        period: "مرة واحدة",
+        period: "إعداد",
+        priceSuffix: "+ ٢٩ ر.ع. / شهر",
         description:
-          "أدوات داخلية مخصصة وأتمتة توفر ساعات أسبوعياً وتلغي الأخطاء اليدوية.",
+          "حوِّل عملياتك. نبني النظام، وأنت توسّع الأعمال.",
         features: [
           "لوحة عمليات مخصصة",
-          "أتمتة سير العمل ولوحة تحكم مخصصة",
-          "تتبع المخزون / CRM",
-          "بوت واتساب آلي",
-          "تقارير أداء الفريق",
-          "دعم مستمر 3 أشهر",
+          "أتمتة سير العمل ونظام CRM",
+          "بوت واتساب ذكي",
+          "دعم مستمر للنظام",
         ],
         cta: "ابدأ الآن",
       },
       {
         name: "محرك النمو",
-        tagline: "كبِّر مع البيانات والمحتوى.",
+        tagline: "شريكك الرقمي المتكامل.",
         price: "٥٩ ر.ع.",
         period: "/ شهر",
         description:
-          "استبقاء شهري يضاعف حضورك الرقمي شهراً بعد شهر عبر SEO ومحتوى ذكي.",
+          "شراكة رقمية متكاملة. نحن نتولّى النمو، وأنت تتولّى العملاء.",
         features: [
-          "شراكة استبقاء شهرية",
-          "إنتاج محتوى بالذكاء الاصطناعي",
           "حملات SEO متقدمة",
-          "تقارير تحليل المنافسين",
-          "تحسين معدلات التحويل",
-          "مدير حساب مخصص",
+          "إنتاج محتوى بالذكاء الاصطناعي",
+          "تحسين مستمر لمعدلات التحويل",
+          "صيانة كاملة للموقع",
         ],
         cta: "ابدأ الآن",
       },
