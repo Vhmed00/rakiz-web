@@ -87,6 +87,31 @@ export interface Translations {
     }>;
     bottomNote: string;
   };
+  customSolutions: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    cardBadge: string;
+    cardTitle: string;
+    priceRange: string;
+    priceTo: string;
+    retainer: string;
+    retainerNote: string;
+    features: string[];
+    resultText: string;
+    resultFrom: string;
+    resultConnector: string;
+    resultTo: string;
+    note: string;
+    levelsTitle: string;
+    levels: Array<{ title: string; desc: string }>;
+    guaranteeTitle: string;
+    guaranteeText: string;
+    ctaTitle: string;
+    ctaDesc: string;
+    ctaButton: string;
+    ctaMicro: string;
+  };
   process: {
     badge: string;
     heading: string;
@@ -119,7 +144,7 @@ const en: Translations = {
     links: [
       { label: "Features",  href: "#features"  },
       { label: "Integrate", href: "#integrate" },
-      { label: "Pricing",   href: "#packages"  },
+      { label: "Pricing",   href: "#custom-solutions"  },
       { label: "Process",   href: "#process"   },
     ],
     cta: "Get started",
@@ -300,6 +325,42 @@ const en: Translations = {
       "All packages include a free 30-minute diagnostic call. No commitment required.",
   },
 
+  customSolutions: {
+    badge: "Custom Solution",
+    title: "Turn your work into a clear system… in days",
+    subtitle: "We analyse how you operate and build a custom digital system that helps you manage your business easily, saves your time, and puts everything under your control.",
+    cardBadge: "Your own system",
+    cardTitle: "Custom Business System",
+    priceRange: "OMR 120",
+    priceTo: "– 320",
+    retainer: "+ OMR 25",
+    retainerNote: "/ month (maintenance & support)",
+    features: [
+      "Build a digital system tailored to your business",
+      "Organise orders and clients in one place",
+      "Connect all communication channels (WhatsApp & more)",
+      "A simple control panel to manage your work",
+      "Improve how you receive and follow up with clients",
+    ],
+    resultText: "Your business transforms from",
+    resultFrom: "chaotic and exhausting",
+    resultConnector: "to",
+    resultTo: "a clear, easy-to-manage system",
+    note: "Note: every system is designed for your specific needs — we don't use ready-made templates",
+    levelsTitle: "What could your system look like?",
+    levels: [
+      { title: "Basic Level",    desc: "Simple organisation of your orders and clear client intake" },
+      { title: "Full Level",     desc: "Complete client management + order tracking + control panel" },
+      { title: "Smart Level",    desc: "Advanced system with automation to reduce effort and speed up work" },
+    ],
+    guaranteeTitle: "Our guarantee:",
+    guaranteeText: "If you don't notice a difference in how your business is organised within 14 days, we keep working with you for free until the system delivers.",
+    ctaTitle: "Start organising your business today",
+    ctaDesc: "Let us understand your work and design a system that fits you perfectly",
+    ctaButton: "Book a free consultation",
+    ctaMicro: "Most of our clients used to manage their work chaotically… now everything is organised in one place.",
+  },
+
   process: {
     badge: "How it works",
     heading: "Three steps to",
@@ -367,7 +428,7 @@ const ar: Translations = {
     links: [
       { label: "المميزات",  href: "#features"  },
       { label: "التكامل",   href: "#integrate" },
-      { label: "الأسعار",   href: "#packages"  },
+      { label: "الأسعار",   href: "#custom-solutions"  },
       { label: "العملية",   href: "#process"   },
     ],
     cta: "ابدأ الآن",
@@ -544,6 +605,42 @@ const ar: Translations = {
       },
     ],
     bottomNote: "جميع الباقات تشمل مكالمة تشخيصية مجانية 30 دقيقة. لا التزامات.",
+  },
+
+  customSolutions: {
+    badge: "الحل المخصص",
+    title: "حوّل شغلك إلى نظام واضح… خلال أيام",
+    subtitle: "نقوم بتحليل طريقة عملك وبناء نظام رقمي خاص يساعدك تدير عملك بسهولة، يوفر وقتك، ويجعل كل شيء تحت سيطرتك.",
+    cardBadge: "نظامك الخاص",
+    cardTitle: "Custom Business System",
+    priceRange: "OMR 120",
+    priceTo: "– 320",
+    retainer: "+ OMR 25",
+    retainerNote: "/ شهر (صيانة ودعم)",
+    features: [
+      "بناء نظام رقمي مخصص لطبيعة عملك",
+      "تنظيم الطلبات والعملاء في مكان واحد",
+      "ربط جميع وسائل التواصل (واتساب وغيرها)",
+      "لوحة تحكم بسيطة لإدارة شغلك",
+      "تحسين طريقة استقبال ومتابعة العملاء",
+    ],
+    resultText: "شغلك يتحول من",
+    resultFrom: "عشوائي ومتعب",
+    resultConnector: "إلى",
+    resultTo: "نظام واضح وسهل الإدارة",
+    note: "ملاحظة: كل نظام يتم تصميمه حسب احتياجك — لا نستخدم قوالب جاهزة",
+    levelsTitle: "كيف ممكن يكون نظامك؟",
+    levels: [
+      { title: "مستوى أساسي",  desc: "تنظيم بسيط لطلباتك واستقبال العملاء بشكل واضح" },
+      { title: "مستوى متكامل", desc: "إدارة كاملة للعملاء + متابعة الطلبات + لوحة تحكم" },
+      { title: "مستوى ذكي",    desc: "نظام متطور مع أتمتة لتقليل الجهد وتسريع العمل" },
+    ],
+    guaranteeTitle: "ضماننا:",
+    guaranteeText: "إذا ما لاحظت فرق في تنظيم شغلك خلال 14 يوم، نستمر معك مجانًا حتى يكون النظام فعّال.",
+    ctaTitle: "ابدأ بتنظيم شغلك اليوم",
+    ctaDesc: "خلنا نفهم شغلك ونصمم لك نظام يناسبك بالضبط",
+    ctaButton: "احجز استشارة مجانية",
+    ctaMicro: "معظم عملائنا كانوا يديرون أعمالهم بشكل عشوائي… والآن كل شيء عندهم منظم في مكان واحد.",
   },
 
   process: {
